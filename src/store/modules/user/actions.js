@@ -4,6 +4,7 @@
  * 异步操作要定义在action
  */
 import * as types from '../types'
+import pinch from 'react-native-pinch'
 
 /**
  * 创建异步操作
@@ -12,15 +13,32 @@ import * as types from '../types'
  */
 export async function login() {
 
-	let respone = await fetch('http://localhost:4000/app/wfront/blog').then(res => {
-
-		return {
-
-            name: 'zhangdi',
+    // let respone = await fetch('http://localhost:4000/app/wfront/blog').then(res => {
+    let respone = await pinch.fetch('https://10.187.101.154/ngsoc/admin/login?app=react-native', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: '{"username": "admin", "password": "Admin123"}',
+        sslPinning: {
+            cert: 'ngsoc'
+        }
+    })
+    .then(res => {
+        console.log(JSON.parse(res.bodyString));
+        // return res.json()
+    })
+    .then(data => {
+        return {
+            name: data.data.username,
+            // name: 'zhangdi',
             organization: '360',
             isLogin: true
         }
-	}, () => {
+    })
+    .catch(res => {
+
+        console.log(res)
 
 		return {
 
@@ -32,7 +50,7 @@ export async function login() {
 
 	return {
 
-		type: types.TYPE_BLOG_LIST,
+		type: types.TYPE_USER_LOGIN,
 		user: respone.user
 	}
 }

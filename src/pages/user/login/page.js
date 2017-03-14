@@ -84,13 +84,14 @@ export default class Login extends Component {
   }
 
   submit() {
-    
-    const {navigator} = this.props
 
-    if(navigator) {
+    this.props.login();
+    // const {navigator} = this.props
 
-      navigator.pop()
-    }
+    // if(navigator) {
+
+    //   navigator.pop()
+    // }
   }
 
 }

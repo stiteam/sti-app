@@ -12,6 +12,7 @@
     "react-native-camera": "^0.6.0",
     "react-native-highcharts": "^0.1.1",
     "react-native-maps": "^0.13.0",
+    "react-native-pinch": "0.0.19",
     "react-native-swiper": "^1.5.4",
     "react-native-vector-icons": "^4.0.0",
     "react-redux": "^5.0.2",
