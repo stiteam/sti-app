@@ -6,7 +6,7 @@
  */
 import { connect } from 'react-redux'
 import { login } from '../../../store/modules/user/actions'
-import Login from './page'
+import User from './page'
 
 /**
  * state到props的映射
@@ -48,5 +48,5 @@ export default connect(
 
 	mapStateToProps, 
     mapDispatchToProps
-)(Login)
+)(User)
 

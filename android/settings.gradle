@@ -1,6 +1,4 @@
 rootProject.name = 'NGSOC'
-include ':react-native-pinch'
-project(':react-native-pinch').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-pinch/android')
 include ':react-native-camera'
 project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
 include ':react-native-vector-icons'
